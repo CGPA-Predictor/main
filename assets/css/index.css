@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  header {
+    background-color: #d1d7e0;
+  }
+
+  body {
+    font-family: "Baloo Bhai 2", cursive;
+    background-color: #000;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #0C4271;
+    margin: 50px;
+    font-size: 50px;
+    font-weight: 500;
+  }
+  
+  img.logo {
+    height: 70px;
+  }
+  
+  nav.main-navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 0 20px;
+  }
+  
+  nav.main-navigation ul li{
+    display: inline-block;
+    padding: 5px;
+    border-radius: 13px;
+    margin: 10px 12px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #0C4271;
+    font-weight: 500;
+  }
+  
+  nav.main-navigation ul li:hover{
+    background-color: rgb(233, 231, 231);
+  }
+  
+  #login1:hover {
+    background-color: #FFF;
+  }
+  
+  button.login {
+    padding: 15px 40px;
+    background-color: rgba(255, 43, 74, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  button.login:hover {
+    background-color: rgba(255, 43, 74, 0.8);
+  }
+
+  div.intro{
+    margin: 85px 50px;
+    padding: 0px 450px;
+  }
+
+  img.image{
+    height: 400px;
+    width : 600px;
+  }

@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  text-align: center;
+  color: #0C4271;
+  margin: 50px;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+img.logo {
+  height: 70px;
+}
+
+nav.main-navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 0 20px;
+}
+
+nav.main-navigation ul li{
+  display: inline-block;
+  padding: 5px;
+  border-radius: 13px;
+  margin: 10px 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+nav.main-navigation ul li:hover{
+  background-color: #36454F;
+}
+
+button.login {
+  padding: 15px 40px;
+  background-color: rgba(255, 43, 74, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+button.login:hover {
+  background-color: rgba(255, 43, 74, 0.8);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+:root {
+  --bg-color: rgb(225, 229,242);
+  --color1: rgb(191, 219, 247);
+  --color2: rgb(31, 122, 140);
+  --color3: rgb(2, 43, 58);
+  --white: rgb(255, 255, 255);
+  --persian-orange: rgb(198, 136, 102);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: 16px / 24px 'Lora', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.cards {
+  display: flex;
+  padding: 25px 0;
+  list-style: none;
+  text-align: center;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	justify-content: center;
+  flex: 0 0 100%;
+  padding: 20px;
+  background: #36454F;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow: 5px 20px 50px #36454F;
+  scroll-snap-align: start;
+  transition: all 0.2s;
+}
+
+.card:not(last-child) {
+  margin-right: 10px;
+}
+
+.card:hover {
+  scale: 1.05;
+}
+.card .card-title {
+  font-size: 1.5rem;
+}
+
+.card .round {
+  border: 2px solid var(--persian-orange);
+  border-radius: 50%;
+  padding: .35rem;
+}
+.card .card-content {
+  margin: 20px 0;
+  max-width: 85%;
+}
+.card-content p {
+  font-size: 0.88rem
+}
+button.primary {
+	background-color: var(--color3);
+	border: 1px solid #fff;
+	border-radius: 3px;
+	color: var(--white);
+  font-family: inherit;
+	font-weight: 500;
+	padding: 10px 25px;
+  margin-top: 1rem;
+}
+
+button.primary:hover {
+  background: var(--color2);
+}
+
+button.primary.ghost {
+	background-color: var(--color3);
+	color: #fff;
+}
+
+button.ghost:hover {
+  background: var(--color2);
+  color: var(--white);
+}
+/* Media Query */
+
+@media (min-width: 500px) {
+  .card {
+    flex-basis: calc(50% - 10px);
+  }
+
+  .card:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .card {
+    flex-basis: calc(calc(100% / 5) - 20px);
+  }
+
+  .card:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+@media (min-width: 1100px) {
+  .card {
+    flex-basis: calc(20% - 40px);
+  }
+
+  .card:not(:last-child) {
+    margin-right: 40px;
+  }
+}
