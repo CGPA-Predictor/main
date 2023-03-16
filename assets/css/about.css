@@ -22,14 +22,13 @@ h2 {
 }
 
 img.logo {
-  height: 70px;
+  height: 65px;
 }
 
 nav.main-navigation{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
   margin: 0 20px;
 }
 
@@ -46,22 +45,7 @@ nav.main-navigation ul li{
 
 nav.main-navigation ul li:hover{
   background-color: #36454F;
-}
-
-button.login {
-  padding: 15px 40px;
-  background-color: rgba(255, 43, 74, 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  color: white;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-button.login:hover {
-  background-color: rgba(255, 43, 74, 0.8);
+  color:white;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
@@ -84,11 +68,9 @@ button.login:hover {
 }
 
 body {
-  font: 16px / 24px 'Lora', sans-serif;
+  font-family: "Baloo Bhai 2", cursive;
   background-color: #000;
-  color: #fff;
 }
-
 .container {
   max-width: 1400px;
   padding: 0 15px;
@@ -133,20 +115,24 @@ h2 {
 }
 .card .card-title {
   font-size: 1.5rem;
+  color: #fff;
 }
 
 .card .round {
-  border: 2px solid var(--persian-orange);
+  border: 2px solid #36454F;
   border-radius: 50%;
   padding: .35rem;
 }
+
 .card .card-content {
   margin: 20px 0;
   max-width: 85%;
 }
+
 .card-content p {
   font-size: 0.88rem
 }
+
 button.primary {
 	background-color: var(--color3);
 	border: 1px solid #fff;
@@ -171,7 +157,6 @@ button.ghost:hover {
   background: var(--color2);
   color: var(--white);
 }
-/* Media Query */
 
 @media (min-width: 500px) {
   .card {
