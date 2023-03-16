@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/login_reg.css">
+	<title>CGPA Calculator</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 	<link rel="icon" href="assets/images/logo.png">
 </head>
 <body>
+	<header>
+		<nav class="main-navigation">
+			<a href="index.html"><img class="logo" src="assets/images/logo_name.png" alt=""></a>
+			<ul>
+				<li><a href="index.html" target="">Home</a></li>
+				<li><a href="login.html" target="">Login</a></li>
+			</ul>
+		</nav>
+	</header>
 	<div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
 
@@ -25,9 +34,9 @@
 			<div class="login">
 				<form>
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Login</button>
+					<input type="email" name="email" placeholder="Email" id="email" required="">
+					<input type="password" name="pswd" placeholder="Password" id="password" required="">
+					<button onclick="auth()">Login</button>
 					<p>
 						Forgot Password?
 						<a href="about.html"><br>Contact us<br></a>
@@ -35,5 +44,16 @@
 				</form>
 			</div>
 	</div>
+	<script>
+		function auth(){
+		  var email = document.getElementById("email").value;
+		  var password = document.getElementById("password").value;
+		  if(email=="admin@gmail.com" && password=="admin123#"){
+			window.location.assign("home.html")
+			alert("Login Successful")
+		  }
+		  else alert("Invalid Credentials!")
+		}
+	  </script>
 </body>
 </html>
