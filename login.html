@@ -1,59 +1,106 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>CGPA Calculator</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
-	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-	<link rel="icon" href="assets/images/logo.png">
-</head>
-<body>
-	<header>
-		<nav class="main-navigation">
-			<a href="index.html"><img class="logo" src="assets/images/logo_name.png" alt=""></a>
-			<ul>
-				<li><a href="index.html" target="">Home</a></li>
-				<li><a href="login.html" target="">Login</a></li>
-			</ul>
-		</nav>
-	</header>
-	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
+  <head>
+    <title>CGPA Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/images/logo.png" />
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css" /> 
+  </head>
+  <body>
+    <header>
+      <nav class="main-navigation">
+        <a href="index.html"
+          ><img class="logo" src="assets/images/logo_name.png" alt=""
+        /></a>
+        <ul>
+          <li><a href="index.html" target="">Home</a></li>
+          <li><a href="login.html" target="">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <!-- upper button section to select
+             the login or signup form -->
+      <div class="slider"></div>
+      <div class="btn">
+        <button class="login">Login</button>
+        <button class="signup">Signup</button>
+      </div>
 
-			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="Name" required="">
-					<input type="text" name="txt" placeholder="Reg no" required="">
-					<input type="text" name="txt" placeholder="Year" required="">
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Sign up</button>
-				</form>
-			</div>
+      <!-- Form section that contains the
+             login and the signup form -->
+      <div class="form-section">
+        <!-- login form -->
+        <div class="login-box">
+          <input
+            type="email"
+            class="email ele"
+            id="login_email"
+            placeholder="youremail@email.com"
+          />
+          <input
+            type="password"
+            class="password ele"
+            id="login_password"
+            placeholder="password"
+          />
+          <!-- <button id="forgot">Forgot Password?</button> -->
+          <p>
+            <a href="#" id="forgot">Forgot Password?</a>
+          </p>
+          <button class="clkbtn" id="LogIn">Login</button>
+        </div>
 
-			<div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" id="email" required="">
-					<input type="password" name="pswd" placeholder="Password" id="password" required="">
-					<button onclick="auth()">Login</button>
-					<p>
-						Forgot Password?
-						<a href="about.html"><br>Contact us<br></a>
-					</p>
-				</form>
-			</div>
-	</div>
-	<script>
-		function auth(){
-		  var email = document.getElementById("email").value;
-		  var password = document.getElementById("password").value;
-		  if(email=="admin@gmail.com" && password=="admin123#"){
-			window.location.assign("home.html")
-			alert("Login Successful")
-		  }
-		  else alert("Invalid Credentials!")
-		}
-	  </script>
-</body>
+        <!-- signup form -->
+        <div class="signup-box">
+          <input
+            type="text"
+            class="name ele"
+            id="name"
+            placeholder="Enter your name"
+          />
+          <input
+            type="email"
+            class="email ele"
+            id="email"
+            placeholder="youremail@email.com"
+          />
+          <input
+            type="regno"
+            class="password ele"
+            id="regno"
+            placeholder="reg no"
+          />
+          <input
+            type="password"
+            class="password ele"
+            id="password"
+            placeholder="password"
+          />
+
+          <button class="clkbtn" id="SignUp">Signup</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let signup = document.querySelector(".signup");
+    let login = document.querySelector(".login");
+    let slider = document.querySelector(".slider");
+    let formSection = document.querySelector(".form-section");
+
+    signup.addEventListener("click", () => {
+      slider.classList.add("moveslider");
+      formSection.classList.add("form-section-move");
+    });
+
+    login.addEventListener("click", () => {
+      slider.classList.remove("moveslider");
+      formSection.classList.remove("form-section-move");
+    });
+  </script>
+  <script type="module" src="assets/js/firebase.js"></script>
 </html>
