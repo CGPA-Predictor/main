@@ -148,8 +148,15 @@ button:hover {
 
   float: left;
   padding: 20px;
-  border: 2px solid red;
 } 
+
+.green{
+  font-size: 60px;
+}
+
+.blue{
+  margin-left:70px;
+}
 
 :root {
   --gauge-width: 600px;
@@ -199,6 +206,7 @@ button:hover {
 }
 
 .gauge {
+  font-size: 20px;
   --gauge-height: calc(var(--gauge-width) / 2);
   width: calc(var(--gauge-width));
   height: calc(var(--gauge-height));
@@ -254,10 +262,10 @@ button:hover {
   font-size: 1.2em;
 }
 
-.gauge-center .number:before {
+/* .gauge-center .number:before {
   counter-reset: number var(--actual-value);
   content: counter(number);
-}
+} */
 
 .needle {
     position: absolute;

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>User Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/profile.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="main-navigation">
+      <a href="index.html"
+        ><img class="logo" src="assets/images/logo_name.png" alt=""
+      /></a>
+      <ul>
+        <li><a href="home.html" target="">Home</a></li>
+        <li><a href="about.html" target="">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="profile-container">
+    
+    <div class="profile-image">
+      <img src="assets/images/home.png " id="output" alt="Profile Image">
+      <div class="profile-header">
+        <h1 id="name"></h1>
+      </div>
+    </div>
+
+    <div class="profile-details">
+      
+      <form id="user-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Semester</label>
+          <input type="text" id="semester" name="semester" class="form-input"  required />
+        </div>
+        <div class="form-group">
+          <label for="reg-no" class="form-label">Registration No</label>
+          <input type="text" id="regno" name="regno" class="form-input"  required />
+        </div>
+        <div class="form-group">
+          <label for="branch" class="form-label">Branch</label>
+          <input type="text" id="branch" name="branch" class="form-input" required />
+        </div>
+        <div class="form-group">
+          <label for="cgpa" class="form-label">CGPA</label>
+          <input type="text" id="cgpa" name="cgpa" class="form-input" required />
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" id="email" name="email" class="form-input" required />
+        </div>
+        <button type="button" id="update-btn" class="btn">Update</button>
+        <button type="submit" id="save-btn" class="btn" disabled>Save</button>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+<script type="module" src="assets/js/profile.js"></script>
+
+</html>
