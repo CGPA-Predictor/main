@@ -1,5 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 import {
+  getStorage,
+  uploadBytes,
+  getDownloadURL,
+  ref as sRef,
+} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-storage.js";
+import {
   getDatabase,
   ref,
   child,
@@ -9,6 +15,7 @@ import {
 import {
   getAuth,
   onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -32,8 +39,8 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     var uid = user.uid;
     cpy = uid;
-    alert(uid.name);
     const dbRef = ref(getDatabase());
+    const stRef = sRef(getStorage());
     get(child(dbRef, `users/${uid}`))
       .then((snapshot) => {
         const name = document.querySelector("#name");
@@ -57,12 +64,24 @@ onAuthStateChanged(auth, (user) => {
       .catch((error) => {
         console.error(error);
       });
+    const storage = getStorage();
+    getDownloadURL(sRef(storage, `${uid}/profilePicture`))
+      .then(function (url) {
+        // Set the profile picture URL as the src attribute of the <img> element
+        var profilePic = document.getElementById("output");
+        profilePic.src = url;
+      })
+      .catch(function (error) {
+        // Handle any errors
+        console.log(error);
+      });
   } else {
     // User is signed out
     // ...
   }
 });
 
+const profilePic = document.querySelector(".profile-pic");
 const semesterInput = document.getElementById("semester");
 const regNoInput = document.getElementById("regno");
 const branchInput = document.getElementById("branch");
@@ -71,6 +90,7 @@ const emailInput = document.getElementById("email");
 const updateBtn = document.getElementById("update-btn");
 const saveBtn = document.getElementById("save-btn");
 
+profilePic.style.pointerEvents = "none";
 semesterInput.setAttribute("disabled", true);
 regNoInput.setAttribute("disabled", true);
 branchInput.setAttribute("disabled", true);
@@ -79,8 +99,18 @@ emailInput.setAttribute("disabled", true);
 updateBtn.removeAttribute("disabled");
 saveBtn.setAttribute("disabled", true);
 
-updateBtn.addEventListener("click", () => {
-  alert(document.getElementById("regno").value);
+var file;
+var check = 0;
+updateBtn.addEventListener("click", (e) => {
+  const input = document.getElementById("file");
+  input.addEventListener("change", (event) => {
+    var image = document.getElementById("output");
+    image.src = URL.createObjectURL(event.target.files[0]);
+    alert(file);
+    file = event.target.files[0];
+    check = 1;
+  });
+  profilePic.style.pointerEvents = "auto";
   semesterInput.removeAttribute("disabled");
   regNoInput.removeAttribute("disabled");
   branchInput.removeAttribute("disabled");
@@ -92,6 +122,7 @@ updateBtn.addEventListener("click", () => {
 
 // Save updated values when save button is clicked
 saveBtn.addEventListener("click", (e) => {
+  profilePic.style.pointerEvents = "none";
   semesterInput.setAttribute("disabled", true);
   regNoInput.setAttribute("disabled", true);
   branchInput.setAttribute("disabled", true);
@@ -100,7 +131,6 @@ saveBtn.addEventListener("click", (e) => {
   updateBtn.removeAttribute("disabled");
   saveBtn.setAttribute("disabled", true);
   const db = getDatabase();
-  alert(name1);
   const postData = {
     name: name1,
     semester: document.getElementById("semester").value,
@@ -111,5 +141,32 @@ saveBtn.addEventListener("click", (e) => {
   };
   const updates = {};
   updates["users/" + cpy + "/"] = postData;
+  if (check) {
+    const storage = getStorage();
+    const storageRef = sRef(storage, cpy + "/profilePicture");
+    const fileType = file["type"];
+    alert(fileType);
+    const validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+    if (validImageTypes.includes(fileType)) {
+      alert("Yes");
+      uploadBytes(storageRef, file).then((snapshot) => {
+        console.log("Uploaded a blob or file!");
+      });
+    }
+    alert("Updated Successfully!");
+    check=0;
+  }
   return update(ref(db), updates);
+});
+
+document.getElementById("logout-btn").addEventListener("click", function () {
+  signOut(auth)
+    .then(() => {
+      console.log("Logged Out");
+      alert("Sign-out successful.");
+      window.location.replace("index.html");
+    })
+    .catch((error) => {
+      console.log("An error happened.");
+    });
 });

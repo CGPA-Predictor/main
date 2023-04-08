@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Baloo Bhai 2", cursive;
 }
 
 header {
@@ -9,7 +10,6 @@ header {
 }
 
 body {
-  font-family: "Baloo Bhai 2", cursive;
   background-color: #000;
 }
 

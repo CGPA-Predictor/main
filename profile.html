@@ -12,7 +12,7 @@
 <body>
   <header>
     <nav class="main-navigation">
-      <a href="index.html"
+      <a href="home.html"
         ><img class="logo" src="assets/images/logo_name.png" alt=""
       /></a>
       <ul>
@@ -22,17 +22,21 @@
     </nav>
   </header>
   <div class="profile-container">
-    
-    <div class="profile-image">
-      <img src="assets/images/home.png " id="output" alt="Profile Image">
-      <div class="profile-header">
-        <h1 id="name"></h1>
-      </div>
+    <div class="profile-pic" >
+      <label class="-label" for="file">
+        <span class="glyphicon glyphicon-camera"></span>
+        <span>Change Image</span>
+      </label>
+      <input id="file" type="file"/>
+      <img src="assets/images/profile.jpeg" id="output" width="200" />
+
+      
     </div>
 
     <div class="profile-details">
       
       <form id="user-form">
+        <h1 id="name"></h1>
         <div class="form-group">
           <label for="name" class="form-label">Semester</label>
           <input type="text" id="semester" name="semester" class="form-input"  required />
@@ -54,7 +58,8 @@
           <input type="text" id="email" name="email" class="form-input" required />
         </div>
         <button type="button" id="update-btn" class="btn">Update</button>
-        <button type="submit" id="save-btn" class="btn" disabled>Save</button>
+        <button type="submit" id="save-btn" class="btn">Save</button>
+        <button type="submit" id="logout-btn" class="btn">Log Out</button>
       </form>
 
     </div>

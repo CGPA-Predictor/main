@@ -31,19 +31,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     const uid = user.uid;
-//     // ...
-//   } else {
-//     // User is signed out
-//     // ...
-//   }
-// });
-// Initialize Firebase
-//const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
 const database = getDatabase(app);
@@ -84,21 +71,6 @@ document.getElementById("SignUp").addEventListener("click", function () {
 
 //----- Login code start
 document.getElementById("LogIn").addEventListener("click", function () {
-  setPersistence(auth, 'none')
-  .then(() => {
-    // Existing and future Auth states are now persisted in the current
-    // session only. Closing the window would clear any existing state even
-    // if a user forgets to sign out.
-    // ...
-    // New sign-in will be persisted with session persistence.
-    return signInWithEmailAndPassword(auth, email, password);
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorCode)
-  });
   var email = document.getElementById("login_email").value;
   var password = document.getElementById("login_password").value;
 
@@ -113,7 +85,6 @@ document.getElementById("LogIn").addEventListener("click", function () {
       // ...
       const user1 = auth.currentUser;
       var id = user1.uid;
-      alert(id);
       if (user1) {
         console.log(user1.name);
         // User is signed in, see docs for a list of available properties
