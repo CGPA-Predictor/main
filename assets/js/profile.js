@@ -106,7 +106,6 @@ updateBtn.addEventListener("click", (e) => {
   input.addEventListener("change", (event) => {
     var image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
-    alert(file);
     file = event.target.files[0];
     check = 1;
   });
@@ -145,10 +144,8 @@ saveBtn.addEventListener("click", (e) => {
     const storage = getStorage();
     const storageRef = sRef(storage, cpy + "/profilePicture");
     const fileType = file["type"];
-    alert(fileType);
     const validImageTypes = ["image/gif", "image/jpeg", "image/png"];
     if (validImageTypes.includes(fileType)) {
-      alert("Yes");
       uploadBytes(storageRef, file).then((snapshot) => {
         console.log("Uploaded a blob or file!");
       });
