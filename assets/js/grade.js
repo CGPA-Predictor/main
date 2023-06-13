@@ -81,27 +81,27 @@ function validation() {
 
 function calculateGrade() {
   // Fetching Values in Variables
-  var q1 = parseInt(document.getElementById("q1").value) || 0;
-  var hq1 = parseInt(document.getElementById("hq1").value) || 0;
-  var aq1 = parseInt(document.getElementById("aq1").value) || 0;
-  var q2 = parseInt(document.getElementById("q2").value) || 0;
-  var hq2 = parseInt(document.getElementById("hq2").value) || 0;
-  var aq2 = parseInt(document.getElementById("aq2").value) || 0;
-  var lst1 = parseInt(document.getElementById("lst1").value) || 0;
-  var hlst1 = parseInt(document.getElementById("hlst1").value) || 0;
-  var alst1 = parseInt(document.getElementById("alst1").value) || 0;
-  var lst2 = parseInt(document.getElementById("lst2").value) || 0;
-  var hlst2 = parseInt(document.getElementById("hlst2").value) || 0;
-  var alst2 = parseInt(document.getElementById("alst2").value) || 0;
-  var ms = parseInt(document.getElementById("ms").value) || 0;
-  var hms = parseInt(document.getElementById("hms").value) || 0;
-  var ams = parseInt(document.getElementById("ams").value) || 0;
-  var prj = parseInt(document.getElementById("prj").value) || 0;
-  var hprj = parseInt(document.getElementById("hprj").value) || 0;
-  var aprj = parseInt(document.getElementById("aprj").value) || 0;
-  var es = parseInt(document.getElementById("es").value) || 0;
-  var hes = parseInt(document.getElementById("hes").value) || 0;
-  var aes = parseInt(document.getElementById("aes").value) || 0;
+  var q1 = parseFloat(document.getElementById("q1").value) || 0;
+  var hq1 = parseFloat(document.getElementById("hq1").value) || 0;
+  var aq1 = parseFloat(document.getElementById("aq1").value) || 0;
+  var q2 = parseFloat(document.getElementById("q2").value) || 0;
+  var hq2 = parseFloat(document.getElementById("hq2").value) || 0;
+  var aq2 = parseFloat(document.getElementById("aq2").value) || 0;
+  var lst1 = parseFloat(document.getElementById("lst1").value) || 0;
+  var hlst1 = parseFloat(document.getElementById("hlst1").value) || 0;
+  var alst1 = parseFloat(document.getElementById("alst1").value) || 0;
+  var lst2 = parseFloat(document.getElementById("lst2").value) || 0;
+  var hlst2 = parseFloat(document.getElementById("hlst2").value) || 0;
+  var alst2 = parseFloat(document.getElementById("alst2").value) || 0;
+  var ms = parseFloat(document.getElementById("ms").value) || 0;
+  var hms = parseFloat(document.getElementById("hms").value) || 0;
+  var ams = parseFloat(document.getElementById("ams").value) || 0;
+  var prj = parseFloat(document.getElementById("prj").value) || 0;
+  var hprj = parseFloat(document.getElementById("hprj").value) || 0;
+  var aprj = parseFloat(document.getElementById("aprj").value) || 0;
+  var es = parseFloat(document.getElementById("es").value) || 0;
+  var hes = parseFloat(document.getElementById("hes").value) || 0;
+  var aes = parseFloat(document.getElementById("aes").value) || 0;
 
 
   if(q1==0 && hq1==0 && aq1==0 && q2==0 && hq2==0 && aq2==0 && lst1==0 && hlst1==0 && alst1==0 && lst2==0 && hlst2==0 && alst2==0 && ms==0 && hms==0 && ams==0 && prj==0 && hprj==0 && aprj==0 && es==0 && hes==0 && aes==0){
