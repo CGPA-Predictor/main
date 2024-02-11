@@ -1,1 +1,1 @@
-# CGPA-Calcuator
+# CGPA-Predictor
